@@ -1,7 +1,7 @@
 ﻿
 <div class="d-inline-flex p-2">
 
-    <div class="@ButtonType.ToString() @(IsDisabled ? "ButtonDisabled" : "")">
+    <div class="@ButtonType.ToString() @(IsDisabled ? "ButtonDisabled" : "")" onclick="@Tapped">
 
         <div class="d-flex justify-content-center">
 
@@ -28,14 +28,15 @@
 </div>
 
 <style>
-
     :root {
         --primary: #F8D247;
         --primary-dark: #E0B827;
-        --tertiary-light: #FFFFFF;
-        --tertiary: #EDEEF1;
         --secondary: #274FF5;
         --secondary-dark: #1A38B2;
+        --tertiary: #F87147;
+        --tertiary-dark: #E75527;
+        --base-tertiary-light: #FFFFFF;
+        --base-tertiary: #EDEEF1;
     }
 
     .noselect {
@@ -45,20 +46,42 @@
         -moz-user-select: none; /* Old versions of Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
         user-select: none; /* Non-prefixed version, currently
-                                      supported by Chrome, Edge, Opera and Firefox */
+                                          supported by Chrome, Edge, Opera and Firefox */
     }
 
-    .ButtonDefault, .ButtonImportant {
+    .ButtonPrimary, .ButtonSecondary, .ButtonTertiary {
         background-color: var(--primary);
         height: 48px;
         border: none;
         border-radius: 24px;
-        color: var(--tertiary-light);
+        color: var(--base-tertiary-light);
         padding: 12px 32px;
     }
 
-    .ButtonImportant {
+    .ButtonPrimaryMedium, .ButtonSecondaryMedium, .ButtonTertiaryMedium {
+        background-color: var(--primary);
+        height: 40px;
+        border: none;
+        border-radius: 20px;
+        color: var(--base-tertiary-light);
+        padding: 8px 24px;
+    }
+
+    .ButtonPrimarySmall, .ButtonSecondarySmall, .ButtonTertiarySmall {
+        background-color: var(--primary);
+        height: 32px;
+        border: none;
+        border-radius: 16px;
+        color: var(--base-tertiary-light);
+        padding: 4px 16px;
+    }
+
+    .ButtonSecondary, .ButtonSecondaryMedium, .ButtonSecondarySmall {
         background-color: var(--secondary);
+    }
+
+    .ButtonTertiary, .ButtonTertiaryMedium, .ButtonTertiarySmall {
+        background-color: var(--tertiary);
     }
 
     .TextStyle {
@@ -66,17 +89,21 @@
         font-size: 16px;
     }
     
-    .ButtonDefault:active {
+    .ButtonPrimary:active, .ButtonPrimaryMedium:active, .ButtonPrimarySmall:active {
         background-color: var(--primary-dark);
     }
 
-    .ButtonImportant:active {
+    .ButtonSecondary:active, .ButtonSecondaryMedium:active, .ButtonSecondarySmall:active {
         background-color: var(--secondary-dark);
+    }
+
+    .ButtonTertiary:active, .ButtonTertiaryMedium:active, .ButtonTertiarySmall:active {
+        background-color: var(--tertiary-dark);
     }
 
     .ButtonDisabled {
         pointer-events: none;
-        background-color: var(--tertiary);
+        background-color: var(--base-tertiary);
     }
 
     .btn-left-icon{
@@ -104,13 +131,21 @@
     public bool IsDisabled { get; set; }
 
     [Parameter]
-    public ButtonTypeEnum ButtonType { get; set; } = ButtonTypeEnum.ButtonDefault;
+    public Action Tapped { get; set; }
+
+    [Parameter]
+    public ButtonTypeEnum ButtonType { get; set; } = ButtonTypeEnum.ButtonPrimary;
 
     public enum ButtonTypeEnum
     {
-        ButtonDefault,
-        ButtonImportant,
+        ButtonSecondary,
         ButtonPrimary,
-        ButtonCaution
+        ButtonTertiary,
+        ButtonSecondaryMedium,
+        ButtonPrimaryMedium,
+        ButtonTertiaryMedium,
+        ButtonSecondarySmall,
+        ButtonPrimarySmall,
+        ButtonTertiarySmall
     }
 }

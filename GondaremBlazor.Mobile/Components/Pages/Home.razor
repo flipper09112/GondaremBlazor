@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using static GondaremBlazor.Components.Components.Buttons.Button
 
 <h1>Hello, world!</h1>
 
@@ -7,18 +8,41 @@
     Welcome to your new app.
     <br />
     <br />
-    <GondaremBlazor.Components.Components.Buttons.Button ButtonType="GondaremBlazor.Components.Components.Buttons.Button.ButtonTypeEnum.ButtonDefault" LeftIcon="ic_home_blazor.png" />
+    <GondaremBlazor.Components.Components.Buttons.Button ButtonType="ButtonTypeEnum.ButtonPrimary" LeftIcon="ic_home_blazor.png" />
     <br />
     <br />
-    <GondaremBlazor.Components.Components.Buttons.Button ButtonType="GondaremBlazor.Components.Components.Buttons.Button.ButtonTypeEnum.ButtonDefault" IsDisabled="true" />
+    <GondaremBlazor.Components.Components.Buttons.Button ButtonType="ButtonTypeEnum.ButtonPrimary" IsDisabled="true" />
     <br />
     <br />
-    <GondaremBlazor.Components.Components.Buttons.Button ButtonType="GondaremBlazor.Components.Components.Buttons.Button.ButtonTypeEnum.ButtonDefault" RightIcon="ic_home_blazor.png" />
+    <GondaremBlazor.Components.Components.Buttons.Button ButtonType="ButtonTypeEnum.ButtonPrimary" RightIcon="ic_home_blazor.png" />
     <br />
     <br />
-    <GondaremBlazor.Components.Components.Buttons.Button ButtonType="GondaremBlazor.Components.Components.Buttons.Button.ButtonTypeEnum.ButtonImportant" />
+    <GondaremBlazor.Components.Components.Buttons.Button ButtonType="ButtonTypeEnum.ButtonSecondary" />
     <br />
     <br />
-    <GondaremBlazor.Components.Components.Buttons.Button ButtonType="GondaremBlazor.Components.Components.Buttons.Button.ButtonTypeEnum.ButtonImportant" IsDisabled="true" />
+    <GondaremBlazor.Components.Components.Buttons.Button ButtonType="ButtonTypeEnum.ButtonSecondary" IsDisabled="true" />
+    <br />
+    <br />
+    <GondaremBlazor.Components.Components.Buttons.Button ButtonType="ButtonTypeEnum.ButtonTertiary" Tapped="Click" />
+    <br />
+    <br />
+    <GondaremBlazor.Components.Components.Buttons.Button ButtonType="ButtonTypeEnum.ButtonTertiary" IsDisabled="true" />
+    <br />
+    <br />
+    <GondaremBlazor.Components.Components.Buttons.Button ButtonType="ButtonTypeEnum.ButtonPrimaryMedium" />
+    <br />
+    <br />
+    <GondaremBlazor.Components.Components.Buttons.Button ButtonType="ButtonTypeEnum.ButtonPrimarySmall" />
+    <br />
+    <br />
 
 </div>
+
+
+@code
+{
+    void Click()
+    {
+        Console.WriteLine("Button Tapped");
+    }
+}
