@@ -1,0 +1,116 @@
+﻿
+<div class="d-inline-flex p-2">
+
+    <div class="@ButtonType.ToString() @(IsDisabled ? "ButtonDisabled" : "")">
+
+        <div class="d-flex justify-content-center">
+
+            @if (!string.IsNullOrEmpty(LeftIcon))
+            {
+                <img class="btn-left-icon" src="_content/GondaremBlazor.Components/Resources/Images/@LeftIcon" height="24" width="24" />
+            }
+
+            <div class="TextStyle noselect">
+
+                @ButtonType.ToString()
+
+            </div>
+            
+            @if (!string.IsNullOrEmpty(RightIcon))
+            {
+                <img class="btn-right-icon" src="_content/GondaremBlazor.Components/Resources/Images/@RightIcon" height="24" width="24" />
+            }
+
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+
+    :root {
+        --primary: #F8D247;
+        --primary-dark: #E0B827;
+        --tertiary-light: #FFFFFF;
+        --tertiary: #EDEEF1;
+        --secondary: #274FF5;
+        --secondary-dark: #1A38B2;
+    }
+
+    .noselect {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
+    }
+
+    .ButtonDefault, .ButtonImportant {
+        background-color: var(--primary);
+        height: 48px;
+        border: none;
+        border-radius: 24px;
+        color: var(--tertiary-light);
+        padding: 12px 32px;
+    }
+
+    .ButtonImportant {
+        background-color: var(--secondary);
+    }
+
+    .TextStyle {
+        text-align: center;
+        font-size: 16px;
+    }
+    
+    .ButtonDefault:active {
+        background-color: var(--primary-dark);
+    }
+
+    .ButtonImportant:active {
+        background-color: var(--secondary-dark);
+    }
+
+    .ButtonDisabled {
+        pointer-events: none;
+        background-color: var(--tertiary);
+    }
+
+    .btn-left-icon{
+        padding: 0px 0;
+        margin-right: 12px;
+        align-content: center;
+    }
+
+    .btn-right-icon {
+        padding: 0px 0;
+        margin-left: 12px;
+        align-content: center;
+    }
+
+</style>
+
+@code {
+    [Parameter]
+    public string LeftIcon { get; set; } = string.Empty;
+
+    [Parameter]
+    public string RightIcon { get; set; } = string.Empty;
+
+    [Parameter]
+    public bool IsDisabled { get; set; }
+
+    [Parameter]
+    public ButtonTypeEnum ButtonType { get; set; } = ButtonTypeEnum.ButtonDefault;
+
+    public enum ButtonTypeEnum
+    {
+        ButtonDefault,
+        ButtonImportant,
+        ButtonPrimary,
+        ButtonCaution
+    }
+}

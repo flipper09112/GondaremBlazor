@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GondaremBlazor.Components", "GondaremBlazor.Components\GondaremBlazor.Components.csproj", "{620C985A-02C0-40D8-B2B1-1FED6C7468CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GondaremBlazor.Mobile", "GondaremBlazor.Mobile\GondaremBlazor.Mobile.csproj", "{CF0666B7-934B-4DFE-B376-95E4B6192153}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{620C985A-02C0-40D8-B2B1-1FED6C7468CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{620C985A-02C0-40D8-B2B1-1FED6C7468CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{620C985A-02C0-40D8-B2B1-1FED6C7468CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{620C985A-02C0-40D8-B2B1-1FED6C7468CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF0666B7-934B-4DFE-B376-95E4B6192153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF0666B7-934B-4DFE-B376-95E4B6192153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF0666B7-934B-4DFE-B376-95E4B6192153}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CF0666B7-934B-4DFE-B376-95E4B6192153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF0666B7-934B-4DFE-B376-95E4B6192153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF0666B7-934B-4DFE-B376-95E4B6192153}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {166077ED-AEA1-484F-86E0-963234024E48}
+	EndGlobalSection
+EndGlobal
