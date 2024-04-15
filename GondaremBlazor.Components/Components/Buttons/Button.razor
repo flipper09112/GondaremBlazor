@@ -28,26 +28,8 @@
 </div>
 
 <style>
-    :root {
-        --primary: #F8D247;
-        --primary-dark: #E0B827;
-        --secondary: #274FF5;
-        --secondary-dark: #1A38B2;
-        --tertiary: #F87147;
-        --tertiary-dark: #E75527;
-        --base-tertiary-light: #FFFFFF;
-        --base-tertiary: #EDEEF1;
-    }
-
-    .noselect {
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-        -khtml-user-select: none; /* Konqueror HTML */
-        -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version, currently
-                                          supported by Chrome, Edge, Opera and Firefox */
-    }
+    @@import url('_content/GondaremBlazor.Components/Styles/BaseColors.css');
+    @@import url('_content/GondaremBlazor.Components/Styles/BaseStyles.css');
 
     .ButtonPrimary, .ButtonSecondary, .ButtonTertiary {
         background-color: var(--primary);
